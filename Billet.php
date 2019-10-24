@@ -5,6 +5,7 @@ class Billet
 {
 
 	protected  $id;
+	protected  $test;
 	protected  $title;
 	protected  $container;
 	protected  $dateAdd;
@@ -42,6 +43,11 @@ class Billet
 		$this->title = $title;
 	}
 
+	public function setTest($test)
+	{
+		$this->test = $test;
+	}
+
 	public   function setContainer($container)
 	{
 		$this->container = $container;
@@ -72,6 +78,11 @@ class Billet
 	public   function title()
 	{
 		return $this->title;
+	}
+
+	public function test()
+	{
+		return $this->test;
 	}
 
 	public   function container()
