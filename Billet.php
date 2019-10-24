@@ -83,6 +83,7 @@ class Billet
 	public function test()
 	{
 		return $this->test;
+		
 	}
 
 	public   function container()

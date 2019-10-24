@@ -75,18 +75,6 @@ class BilletManagerPDO
   	return $listeBillet;
 	}
 
-	public   function getUnique($id)
-	{
-	 $request = $this->db->prepare('SELECT id, title, container, dateAdd, dateEdit FROM billet WHERE id = :id');
-	 $request->bindValue(':id', (int) $id, PDO::PARAM_INT);
-	 $request->execute();
-	 $request->setFetchMode(PDO::FETCH_CLASS | PDO::FETCH_PROPS_LATE, '\blog\model\Billet');
-	 $billet = $request->fetch();
-	 $billet->setDateAdd(new DateTime($billet->dateAdd()));
-	 $billet->setDateEdit(new DateTime($billet->dateEdit()));
-	 return $billet;
-	}
-
 	public   function getId($title)
 	{
 	 $request = $this->db->prepare('SELECT id, title FROM billet WHERE title = :title');
