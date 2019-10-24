@@ -32,18 +32,6 @@ class CommentaireManagerPDO
 		$request->execute();
 	}
 
-	public final  function updateNew($id, $type)
-	{
-		if ($type == 0) {
-			$request = $this->db->prepare('UPDATE commentaire SET estNouveau = 0 WHERE id = :id');
-		}
-		else if ($type == 1)
-		{
-			$request = $this->db->prepare('UPDATE commentaire SET estNouveau = 1 WHERE id = :id');
-		}
-		$request->bindValue(':id', $id, PDO::PARAM_INT);
-		$request->execute();
-	}
 
 	public final  function delete($id)
 	{
